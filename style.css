@@ -7,12 +7,11 @@
 
 body {
     background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
-    min-height: 100vh; /* Cambiamos 'height' por 'min-height' */
-    /* Hemos borrado el overflow: hidden para que permita hacer scroll */
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0; /* Un poco de margen arriba y abajo para que respire */
 }
 
 .card {
@@ -182,28 +181,41 @@ select {
 
 /* --- AJUSTES EXCLUSIVOS PARA MÓVIL --- */
 
+/* 1. Arreglo para que la foto nunca se vea aplastada o estirada */
 #screen1 img {
     height: 150px;
-    object-fit: cover; 
+    object-fit: cover; /* Esto hace que se recorte perfecta como en Instagram */
 }
 
+/* 2. Cuando la pantalla sea pequeña (Móviles) */
 @media (max-width: 600px) {
     .card {
-        width: 92%; 
-        padding: 30px 15px; /* Quitamos un poco de espacio blanco a los lados, pero lo mantenemos arriba y abajo */
-        margin: auto; /* Centra la tarjeta si hay que hacer scroll */
+        padding: 25px 15px; /* Reducimos el borde blanco para que respire el contenido */
+        width: 95%; /* Que ocupe casi todo el ancho */
+        max-height: 90vh; /* Que no sea más alta que la pantalla */
+        overflow-y: auto; /* Si el contenido es muy largo, permite hacer scroll solo dentro de la tarjeta */
     }
 
-    /* Ajustamos los textos para que encajen perfectos */
-    h1 { font-size: 26px; }
-    p { font-size: 16px; margin-bottom: 20px; }
+    h1 {
+        font-size: 24px; /* Hacemos el título un pelín más pequeño para que no ocupe 3 líneas */
+    }
 
-    /* Los planes un pelín más compactos para que quepan bien */
-    .cards-grid { gap: 10px; }
-    .card-plan { padding: 12px 5px; }
-    .card-title { font-size: 13px; }
+    p {
+        font-size: 16px; /* Texto un poquito más pequeño */
+        margin-bottom: 20px;
+    }
 
-    /* Los días se reparten el espacio */
-    .day-selector { gap: 8px; }
-    .day-btn { padding: 10px; font-size: 14px; flex: 1; }
+    .cards-grid {
+        gap: 10px; /* Juntamos un poquito más las tarjetitas de los planes */
+    }
+
+    .card-icon {
+        font-size: 24px; /* Iconos un poco más pequeños */
+        margin-bottom: 5px;
+    }
+
+    .day-btn {
+        padding: 8px 15px; /* Botones de días más compactos */
+        font-size: 14px;
+    }
 }

@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=750">
     <title>¿Una cita? ❤️</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <!-- Enlace al archivo CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <audio id="bgMusic" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+    </audio>
+
     <div class="card" id="screen1">
-        <!--<div style="font-size: 60px; margin-bottom: 10px;">👩‍❤️‍👨</div>-->
-        <img src="imagenes/imagen1.jpeg" alt="Nosotros" style="width: 150px; margin-bottom: 10px; border-radius: 5%;">
+        <img src="imagenes/imagen1.jpeg" alt="Nosotros" class="foto-pareja">
         <h1>¿Querrías tener una cita conmigo? <br>🥹🧡</h1>
         <p>Prometo que será un día muy bonito mi pequeño muchacho.</p>
         <div class="buttons">
@@ -25,12 +26,20 @@
     <div class="card hidden" id="screen2">
         <h1>¡¡Siiii!! 🥰🧡🩷</h1>
         <p>¿Qué plan te apetece más amore mio?</p>
-        <p style="font-size: 14px; color: #777;">pd: Elije el que quieras que te va a dar igual😝, ya tengo pensado todo yo.</p>
+        <p class="nota-pequena">pd: Elije el que quieras que te va a dar igual😝, ya lo tengo pensado todo yo.</p>
         
         <div class="cards-grid">
             <div class="card-plan" onclick="selectPlan('🍕 Ir a cenar', this)">
                 <div class="card-icon">🍕</div>
                 <div class="card-title">Ir a cenar</div>
+            </div>
+            <div class="card-plan" onclick="selectPlan('☕ Tomar algo', this)">
+                <div class="card-icon">☕</div>
+                <div class="card-title">Tomar algo</div>
+            </div>
+            <div class="card-plan" onclick="selectPlan('🎳 Bolos', this)">
+                <div class="card-icon">🎳</div>
+                <div class="card-title">Bolos</div>
             </div>
             <div class="card-plan" onclick="selectPlan('🎬 Cine', this)">
                 <div class="card-icon">🎬</div>
@@ -38,7 +47,7 @@
             </div>
             <div class="card-plan" onclick="selectPlan('🌅 Pasear', this)">
                 <div class="card-icon">🌅</div>
-                <div class="card-title">Paseito al atardecer</div>
+                <div class="card-title">Pasear</div>
             </div>
             <div class="card-plan" onclick="selectPlan('✨ Sorpresa', this)">
                 <div class="card-icon">✨</div>
@@ -46,33 +55,29 @@
             </div>
         </div>
 
-        <p style="margin-bottom: 10px; margin-top: 20px; font-weight: bold;">¿Qué día prefieres?</p>
+        <p class="titulo-seccion">¿Qué día prefieres?</p>
         <div class="day-selector">
+            <button class="day-btn" onclick="selectDay('Viernes', this)">Viernes</button>
             <button class="day-btn" onclick="selectDay('Sábado', this)">Sábado ☀️</button>
             <button class="day-btn" onclick="selectDay('Domingo', this)">Domingo 🌙</button>
         </div>
         
-        <button id="confirm">Confirmar cita con Beni mk3 ❤️</button>
+        <p class="titulo-seccion">¿A qué hora?</p>
+        <select id="hour">
+            <option>18:00</option>
+            <option>19:30</option>
+            <option>21:00</option>
+        </select>
         
+        <button id="confirm">Confirmar ❤️</button>
     </div>
 
     <div class="card hidden" id="screen3">
-        <h1>¡¡Sabía que ibas a decir que si!! 🥰</h1>
+        <h1>🥳 ¡Perfecto!</h1>
         <p id="summary"></p>
-        <img src="imagenes/imagen4.jpeg" alt="Nosotros" style="width: 300px; margin-bottom: 10px; border-radius: 5%;">
-        <h2>🩷 Te quiero muchísimo amor mío 🩷</h2>
-        <br>
-        <h3>🩷 Digo... gracias por aceptar la cita y conocernos un poco más Elisa 🩷</h3>
-        <h3>🩷 Tengo muchísimas ganas 🩷</h3>
-        <br>
-        <h4>🩷 Eres lo mejor que me ha pasado en la vida 🩷</h4>
-        <h4>🩷 Gracias por hacerme tan feliz 🩷</h4>
-        
-
+        <h2>❤️ Tengo muchísimas ganas ❤️</h2>
     </div>
 
-    <!-- Enlace al archivo JavaScript -->
     <script src="script.js"></script>
-
 </body>
 </html>
