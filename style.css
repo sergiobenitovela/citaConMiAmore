@@ -6,24 +6,43 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
-    height: 100vh;
-    overflow: hidden;
+    height: 100dvh; /* Pantalla bloqueada a la medida exacta del móvil */
+    overflow: hidden; /* Fondo completamente fijo */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* LA TARJETA PRINCIPAL CON SCROLL INTERNO */
 .card {
     background: white;
-    width: 90%;
-    max-width: 650px;
-    padding: 40px;
+    width: 92%;
+    max-width: 600px;
+    max-height: 85dvh; /* NUNCA será más alta que el 85% de la pantalla */
+    overflow-y: auto; /* ¡LA MAGIA! Permite hacer scroll solo dentro de la caja */
+    padding: 30px 20px;
     border-radius: 25px;
     text-align: center;
     box-shadow: 0 20px 60px rgba(0, 0, 0, .15);
     animation: fade .7s;
 }
+
+/* --- ESTÉTICA DE LA BARRA DE SCROLL --- */
+.card::-webkit-scrollbar {
+    width: 6px; /* Barra finita */
+}
+
+.card::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.card::-webkit-scrollbar-thumb {
+    background-color: #ff9a9e; /* Color rosa a juego */
+    border-radius: 10px;
+}s
 
 h1 {
     color: #ff6b81;
