@@ -42,7 +42,7 @@ body {
 .card::-webkit-scrollbar-thumb {
     background-color: #ff9a9e; /* Color rosa a juego */
     border-radius: 10px;
-}s
+}
 
 h1 {
     color: #ff6b81;
@@ -135,6 +135,7 @@ select {
         opacity: 0;
     }
 }
+
 /* --- ESTILOS AÑADIDOS PARA LA SCREEN 2 (TARJETAS Y DÍAS) --- */
 
 .cards-grid {
@@ -145,7 +146,6 @@ select {
     margin-top: 20px;
 }
 
-/* Renombrado a card-plan para que no choque con tu contenedor .card principal */
 .card-plan {
     background: #ffffff;
     border: 2px solid #f1f2f6;
@@ -200,41 +200,44 @@ select {
 
 /* --- AJUSTES EXCLUSIVOS PARA MÓVIL --- */
 
-/* 1. Arreglo para que la foto nunca se vea aplastada o estirada */
-#screen1 img {
+#screen1 img, #screen3 img {
     height: 150px;
-    object-fit: cover; /* Esto hace que se recorte perfecta como en Instagram */
+    object-fit: cover; 
+    max-width: 100%;
 }
 
-/* 2. Cuando la pantalla sea pequeña (Móviles) */
+#screen3 img {
+    height: auto;
+}
+
 @media (max-width: 600px) {
     .card {
-        padding: 25px 15px; /* Reducimos el borde blanco para que respire el contenido */
-        width: 95%; /* Que ocupe casi todo el ancho */
-        max-height: 90vh; /* Que no sea más alta que la pantalla */
-        overflow-y: auto; /* Si el contenido es muy largo, permite hacer scroll solo dentro de la tarjeta */
+        padding: 25px 15px; 
+        width: 95%; 
+        max-height: 90vh; 
+        overflow-y: auto; 
     }
 
     h1 {
-        font-size: 24px; /* Hacemos el título un pelín más pequeño para que no ocupe 3 líneas */
+        font-size: 24px; 
     }
 
     p {
-        font-size: 16px; /* Texto un poquito más pequeño */
+        font-size: 16px; 
         margin-bottom: 20px;
     }
 
     .cards-grid {
-        gap: 10px; /* Juntamos un poquito más las tarjetitas de los planes */
+        gap: 10px; 
     }
 
     .card-icon {
-        font-size: 24px; /* Iconos un poco más pequeños */
+        font-size: 24px; 
         margin-bottom: 5px;
     }
 
     .day-btn {
-        padding: 8px 15px; /* Botones de días más compactos */
+        padding: 8px 15px; 
         font-size: 14px;
     }
 }

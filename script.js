@@ -14,7 +14,8 @@ let noCount = 0;
 
 // Función del botón "No" que huye
 function escape() {
-    const x = Math.random() * (window.innerWidth - 150);
+    // Calculamos los límites basados en la pantalla actual
+    const x = Math.random() * (window.innerWidth - 100);
     const y = Math.random() * (window.innerHeight - 80);
 
     no.style.position = "absolute";
@@ -41,7 +42,12 @@ function escape() {
     yes.style.transform = `scale(${1 + (noCount * .08)})`;
 }
 
+// Para móviles es ideal también escuchar el touchstart
 no.addEventListener("mouseenter", escape);
+no.addEventListener("touchstart", (e) => {
+    e.preventDefault(); // Evita clics fantasma
+    escape();
+});
 no.addEventListener("click", escape);
 
 // Pasar a la pantalla 2
