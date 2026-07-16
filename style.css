@@ -178,3 +178,57 @@ select {
     background: #ff4f87;
     color: white;
 }
+
+/* --- AJUSTES EXCLUSIVOS PARA MÓVIL --- */
+
+#screen1 img {
+    height: 150px;
+    object-fit: cover; 
+}
+
+@media (max-width: 600px) {
+    /* 1. La tarjeta principal */
+    .card {
+        width: 96%; /* Hacemos que ocupe casi toda la pantalla de lado a lado */
+        padding: 25px 10px; /* Reducimos mucho el borde blanco lateral (de 40px a 10px) */
+        border-radius: 15px; /* Bordes un poco menos redondos para ganar espacio útil */
+    }
+
+    h1 {
+        font-size: 24px; 
+    }
+
+    p {
+        font-size: 15px; 
+        margin-bottom: 20px;
+    }
+
+    /* 2. Las tarjetitas de los planes */
+    .cards-grid {
+        gap: 8px; /* Juntamos un poquito más las tarjetas entre sí */
+    }
+
+    .card-plan {
+        padding: 10px 5px; /* Quitamos espacio blanco inútil dentro de cada tarjeta */
+    }
+
+    .card-icon {
+        font-size: 24px; 
+        margin-bottom: 5px;
+    }
+
+    .card-title {
+        font-size: 13px; /* Letra un pelín más pequeña para que quepa en una sola línea */
+    }
+
+    /* 3. Los botones de los días */
+    .day-selector {
+        gap: 5px; /* Reducimos la separación entre los botones de los días */
+    }
+
+    .day-btn {
+        padding: 8px 12px; /* Botones más compactos */
+        font-size: 14px;
+        flex: 1; /* Esto hace que los botones se estiren para ocupar todo el ancho disponible por igual */
+    }
+}
