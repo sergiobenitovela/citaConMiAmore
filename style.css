@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    width: 90%;
+    max-width: 650px;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .15);
+    animation: fade .7s;
+}
+
+h1 {
+    color: #ff6b81;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #57606f;
+    margin-bottom: 25px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: .3s;
+}
+
+#yes {
+    background: #ff4f87;
+    color: white;
+}
+
+#yes:hover {
+    transform: scale(1.08);
+}
+
+#no {
+    background: #ececec;
+}
+
+select {
+    padding: 12px;
+    width: 100%;
+    margin: 12px 0;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+#confirm {
+    margin-top: 20px;
+    background: #ff4f87;
+    color: white;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* --- Animación de los corazones de fondo --- */
+.heart {
+    position: absolute;
+    font-size: 22px;
+    animation: float 8s linear infinite;
+    opacity: .6;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+    20% {
+        opacity: .8;
+    }
+    100% {
+        transform: translateY(-120px);
+        opacity: 0;
+    }
+}
+/* --- ESTILOS AÑADIDOS PARA LA SCREEN 2 (TARJETAS Y DÍAS) --- */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+/* Renombrado a card-plan para que no choque con tu contenedor .card principal */
+.card-plan {
+    background: #ffffff;
+    border: 2px solid #f1f2f6;
+    border-radius: 15px;
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-plan:hover {
+    border-color: #ff4f87;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 79, 135, 0.2);
+}
+
+.card-plan.selected {
+    border-color: #ff4f87;
+    background-color: #fff4f6;
+}
+
+.card-icon { 
+    font-size: 30px; 
+    margin-bottom: 10px; 
+}
+
+.card-title { 
+    font-weight: 600; 
+    font-size: 14px; 
+    color: #2f3542;
+}
+
+.day-selector {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.day-btn {
+    background: #ececec;
+    color: #2f3542;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.day-btn.selected {
+    background: #ff4f87;
+    color: white;
+}
